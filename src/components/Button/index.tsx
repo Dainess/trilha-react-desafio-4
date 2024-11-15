@@ -1,8 +1,13 @@
 import { ButtonContainer } from "./styles";
 import { IButtonProps } from "./types";
 
-const Button = ({ title, onClick }: IButtonProps) => {
-  return <ButtonContainer onClick={onClick}>{title}</ButtonContainer>;
+function alt() {
+  return null;
+}
+
+const Button = ({ title, onClick, disabled }: IButtonProps) => {
+  return disabled ? <ButtonContainer onClick={onClick}>{title}</ButtonContainer> 
+  : <ButtonContainer onClick={alt}>{title}</ButtonContainer>;
 };
 
 export default Button;
